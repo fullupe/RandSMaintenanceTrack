@@ -111,7 +111,7 @@ function Receiption() {
         <div className=" h- bg-gray-00  items-center flex flex-col mt-8 ">
           <p className="text-gray-900 text-xl font-bold border-b mb-8 italic ">
         
-            Maintenance Check 📮 {' '}
+            Receiption Check 📮 {' '}
           </p>
 
           <form className="flex items-center mt-3 space-x-3 mb-4">
@@ -183,10 +183,10 @@ function Receiption() {
 
           
             <div className=" flex  w-full justify-center space-x-4 items-center bg-red-00">
-          <button onClick={handleSubmitIn}className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-8 border border-orange-400 hover:border-transparent rounded">
+          <button disabled={!input} onClick={handleSubmitIn}className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-8 border border-orange-400 hover:border-transparent rounded disabled:text-gray-500">
             Tpm In
           </button>
-          <button onClick={handleSubmitOut}className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-6 border border-green-400 hover:border-transparent rounded">
+          <button  disabled={!input} onClick={handleSubmitOut}className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-6 border border-green-400 hover:border-transparent rounded disabled:text-gray-500">
             Tpm Out
           </button>
 

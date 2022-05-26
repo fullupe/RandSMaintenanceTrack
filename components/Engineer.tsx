@@ -88,7 +88,7 @@ function Engineer() {
       <div className="felx flex-col space-y-2">
         <div className=" h-96 bg-gray-00  items-center flex flex-col pt-8 ">
           <p className="text-gray-900 text-xl font-bold border-b mb-4">
-            Maintenance Check{' '}
+            Engineer's Check{' '}
           </p>
 
           <form className="flex items-center mt-3 space-x-3 mb-4">
