@@ -132,24 +132,16 @@ function Agent() {
        </div>
       <hr />
 
-      <form className=" flex flex-col h-fulld w-full bg-yellow-00 p-4 space-y-3">
+      <div className=" flex flex-col  w-full bg-yellow-00 p-1">
 
         
-          <div className=" flex flex-col p-1 w-full justify-center space-x-4 items-center bg-red-00">
+          <div className=" flex flex-col p-0 w-full justify-center  items-center bg-red-00">
               <p className="animate-bounce capitalize ">Safty-Tips</p>
               <p className="text-sm text-gray-300 italic">  *️⃣ Do Not hold paper whiles Printing ✊ </p>
               <p className="text-sm text-gray-300 italic">  *️⃣ Do Not leave tpm under Rain  🌧 </p>
-
-        {/* <button onClick={handleSubmit}className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-8 border border-orange-400 hover:border-transparent rounded">
-          Tpm In
-        </button>
-        <button onClick={handleSubmit}className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-6 border border-green-400 hover:border-transparent rounded">
-          Tpm Out
-        </button> */}
-
           </div>
 
-      </form>
+      </div>
     </div>
   </div>
   )

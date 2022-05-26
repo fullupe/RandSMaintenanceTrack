@@ -179,10 +179,10 @@ function Receiption() {
 
         <hr />
 
-        <form className=" flex flex-col h-fulld w-full bg-yellow-00 p-4 space-y-3">
+        <div className=" flex flex-col  w-full bg-yellow-00 pb-8 ">
 
           
-            <div className=" flex p-12 w-full justify-center space-x-4 items-center bg-red-00">
+            <div className=" flex  w-full justify-center space-x-4 items-center bg-red-00">
           <button onClick={handleSubmitIn}className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-8 border border-orange-400 hover:border-transparent rounded">
             Tpm In
           </button>
@@ -192,7 +192,7 @@ function Receiption() {
 
             </div>
 
-        </form>
+        </div>
       </div>
     </div>
   )
