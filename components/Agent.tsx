@@ -110,7 +110,8 @@ function Agent() {
             </p>
 
             <p className="p-1 flex-1 px-4 bg-gray-900 rounded-lg text-white shadow-lg opacity-30">
-              Status: <small className="ml-2 text-center ">{tpmInfo.status}</small>
+              {/* Status:  */}
+              <small className="ml-2 text-center ">{tpmInfo.status}</small>
             </p>
               </div>
 

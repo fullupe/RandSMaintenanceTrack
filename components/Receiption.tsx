@@ -82,7 +82,7 @@ function Receiption() {
         `https://sheet.best/api/sheets/0e6472cf-f417-4ce9-9618-7717b52883b4/tpm/*${input}*`,
        
         { 
-          status:"Ready",
+          status:"Already Out",
           createdAt: new Date().toLocaleString() 
         }
       )
@@ -156,7 +156,8 @@ function Receiption() {
               </p>
 
               <p className="p-1 flex-1 px-4 bg-gray-900 rounded-lg text-white shadow-lg opacity-30">
-                Status: <small className="ml-2 text-center ">{tpmInfo.status}</small>
+                {/* Status:  */}
+                <small className="ml-2 text-center ">{tpmInfo.status}</small>
               </p>
                 </div>
 

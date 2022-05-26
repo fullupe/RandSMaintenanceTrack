@@ -26,7 +26,7 @@ function Engineer() {
 
    const handleSearch = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
     e.preventDefault()
-       Data.filter((val)=>{
+    DataApi.filter((val: { tpm: string; })=>{
          if(!input){
          return val
          }else if (val.tpm?.toLowerCase().includes(input?.toLowerCase())){
@@ -133,7 +133,8 @@ function Engineer() {
               </p>
 
               <p className="p-1 flex-1 px-4 bg-gray-900 rounded-lg text-white shadow-lg opacity-30">
-                Status: <small className="ml-2 text-center ">{tpmInfo.status}</small>
+                {/* Status:  */}
+                <small className="ml-2 text-center ">{tpmInfo.status}</small>
               </p>
                 </div>
 
@@ -162,7 +163,7 @@ function Engineer() {
             value={status}
           >
               <optgroup label="Status">
-            <option value="Ready">Ready</option>
+            <option value="Ready ✅">Ready</option>
             <option value="Working On">Working On</option>
             <option value="On Test">On Test</option>
             <option value="Eee Management">See Management</option>
@@ -171,7 +172,7 @@ function Engineer() {
             <option value="Card Damage by User">Card Damange by User</option>
             </optgroup>
           </select> 
-          <button onClick={handleSubmit}className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
+          <button disabled={!input} onClick={handleSubmit}className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded disabled:text-gray-500">
             Submit
           </button>
         </form>
