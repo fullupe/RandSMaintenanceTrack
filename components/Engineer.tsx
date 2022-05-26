@@ -106,6 +106,7 @@ function Engineer() {
             />
             {/* <button disabled={!input} className="text-white rounded-lg bg-blue-700 disabled:text-gray-800 cousor-pointer p-2 ">Search</button> */}
             <button
+            type="submit"
               onClick={handleSearch}
               disabled={!input}
               className="bg-transparent  hover:bg-blue-500 disabled:text-gray-800 text-white font-semibold hover:text-white py-0 ml-2 px-2 border border-white hover:border-transparent rounded"
@@ -172,7 +173,7 @@ function Engineer() {
             <option value="Card Damage by User">Card Damange by User</option>
             </optgroup>
           </select> 
-          <button disabled={!input} onClick={handleSubmit}className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded disabled:text-gray-500">
+          <button type="submit" disabled={!input} onClick={handleSubmit}className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded disabled:text-gray-500">
             Submit
           </button>
         </form>
