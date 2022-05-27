@@ -18,7 +18,7 @@ function Receiption() {
 
   const [reflesh, setReflesh] = useState<boolean>(false)
 
-  const baseUrl = process.env.BaseUrl
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
   //console.log(Data)
   
@@ -39,7 +39,7 @@ function Receiption() {
    }
 
    useEffect(() => {
-    axios.get(`https://sheet.best/api/sheets/0e6472cf-f417-4ce9-9618-7717b52883b4`).then((response)=>{
+    axios.get(`${baseUrl}`).then((response)=>{
     setDataApi(response.data)
     console.log(response.data)
     //setLoading(false)
@@ -54,7 +54,7 @@ function Receiption() {
     e.preventDefault()
     axios
       .patch(
-        `https://sheet.best/api/sheets/0e6472cf-f417-4ce9-9618-7717b52883b4/tpm/*${input}*`,
+        `${baseUrl}/*${input}*`,
        
         { 
           status:"Working On",
@@ -79,7 +79,7 @@ function Receiption() {
     e.preventDefault()
     axios
       .patch(
-        `https://sheet.best/api/sheets/0e6472cf-f417-4ce9-9618-7717b52883b4/tpm/*${input}*`,
+        `${baseUrl}/*${input}*`,
        
         { 
           status:"Already Out",

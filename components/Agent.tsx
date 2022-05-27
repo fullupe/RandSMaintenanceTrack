@@ -18,7 +18,7 @@ function Agent() {
 
   const [reflesh, setReflesh] = useState<boolean>(false)
 
-  const baseUrl = process.env.BaseUrl
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
   
   console.log(baseUrl)
@@ -43,7 +43,7 @@ function Agent() {
 
 
     useEffect(() => {
-      axios.get(`https://sheet.best/api/sheets/0e6472cf-f417-4ce9-9618-7717b52883b4`).then((response)=>{
+      axios.get(`${baseUrl}`).then((response)=>{
       setDataApi(response.data)
       console.log(response.data)
       //setLoading(false)
@@ -137,7 +137,7 @@ function Agent() {
       <div className=" flex flex-col  w-full bg-yellow-00 p-1">
 
         
-          <div className=" flex flex-col p-0 w-full justify-center  items-center bg-red-00">
+          <div className=" flex flex-col pb-4 w-full justify-center  items-center bg-red-00">
               <p className="animate-bounce capitalize ">Safty-Tips</p>
               <p className="text-sm text-gray-300 italic">  *️⃣ Do Not hold paper whiles Printing ✊ </p>
               <p className="text-sm text-gray-300 italic">  *️⃣ Do Not leave tpm under Rain  🌧 </p>

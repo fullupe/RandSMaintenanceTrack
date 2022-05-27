@@ -19,7 +19,7 @@ function Engineer() {
 
   const [reflesh, setReflesh] = useState<boolean>(false)
 
-  const baseUrl = process.env.BaseUrl
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
    //console.log(Data)
   
@@ -41,7 +41,7 @@ function Engineer() {
 
 
    useEffect(() => {
-    axios.get(`https://sheet.best/api/sheets/0e6472cf-f417-4ce9-9618-7717b52883b4`).then((response)=>{
+    axios.get(`${baseUrl}`).then((response)=>{
     setDataApi(response.data)
     console.log(response.data)
     //setLoading(false)
@@ -58,7 +58,7 @@ function Engineer() {
     e.preventDefault()
     axios
       .patch(
-        `https://sheet.best/api/sheets/0e6472cf-f417-4ce9-9618-7717b52883b4/tpm/*${input}*`,
+        `${baseUrl}/*${input}*`,
        
         { 
           status,
@@ -104,7 +104,7 @@ function Engineer() {
               placeholder="Enter Tpm Number"
               className=" p-1 w-44 flex-1 text-xl rounded-lg bg-gray-100 text-black outline-none placeholder:text-xl"
             />
-            {/* <button disabled={!input} className="text-white rounded-lg bg-blue-700 disabled:text-gray-800 cousor-pointer p-2 ">Search</button> */}
+            
             <button
             type="submit"
               onClick={handleSearch}
@@ -180,6 +180,6 @@ function Engineer() {
       </div>
     </div>
   )
-}
+    }
 
 export default Engineer
