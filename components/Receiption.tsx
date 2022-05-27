@@ -54,7 +54,7 @@ function Receiption() {
     e.preventDefault()
     axios
       .patch(
-        `${baseUrl}/*${input}*`,
+        `${baseUrl}/tpm/*${input}*`,
        
         { 
           status:"Working On",
@@ -79,7 +79,7 @@ function Receiption() {
     e.preventDefault()
     axios
       .patch(
-        `${baseUrl}/*${input}*`,
+        `${baseUrl}/tpm/*${input}*`,
        
         { 
           status:"Already Out",
