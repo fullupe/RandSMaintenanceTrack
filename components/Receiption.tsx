@@ -4,7 +4,7 @@ import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import TimeAgo from "react-timeago"
 
-import Data from "../Data"
+//import Data from "../Data"
 
 function Receiption() {
 

@@ -3,7 +3,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast'
 
-import Data from "../Data"
+//import Data from "../Data"
 import ReactTimeago from 'react-timeago';
 
 function Agent() {
