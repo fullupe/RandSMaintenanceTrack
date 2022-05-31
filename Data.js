@@ -2,7 +2,7 @@ const Data =[
     {
         tpm:"100",
         agentName:"Johnson ",
-        branch:"uyo",
+        branch:"ph",
         status:"Waiting for Part",
         createdAt:"5/07/2022",
         
@@ -17,7 +17,7 @@ const Data =[
     {
         tpm:"300",
         agentName:"kenneth ",
-        branch:"owerri",
+        branch:"ph",
         status:"Ready",
         createdAt:"5/07/2022",
     }
