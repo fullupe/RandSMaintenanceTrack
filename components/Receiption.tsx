@@ -4,7 +4,7 @@ import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import TimeAgo from "react-timeago"
 
-//import Data from "../Data"
+import Data from "../Data"
 
 function Receiption() {
 
@@ -25,7 +25,7 @@ function Receiption() {
 
    const handleSearch = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
     e.preventDefault()
-    DataApi.filter((val: { tpm: string; })=>{
+    Data.filter((val: { tpm: string; })=>{
          if(!input){
          return val
          }else if (val.tpm?.toLowerCase().includes(input?.toLowerCase())){

@@ -3,7 +3,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast'
 
-//import Data from "../Data"
+import Data from "../Data"
 import ReactTimeago from 'react-timeago';
 
 function Agent() {
@@ -22,11 +22,15 @@ function Agent() {
 
   
   console.log(baseUrl)
+
+  interface val  { 
+    tpm:string
+  }
   
 
    const handleSearch = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
     e.preventDefault()
-    DataApi.filter((val: { tpm: string; })=>{
+    Data.filter((val: val)=>{
          if(!input){
          return val
          }else if (val.tpm?.toLowerCase().includes(input?.toLowerCase())){
@@ -40,8 +44,6 @@ function Agent() {
        })
    }
 
-
-
     useEffect(() => {
       axios.get(`${baseUrl}`).then((response)=>{
       setDataApi(response.data)
@@ -51,10 +53,6 @@ function Agent() {
       console.log(error)
     })
   },[reflesh])
-
-
-
-
 
   return (
     <div
@@ -115,17 +113,13 @@ function Agent() {
               <small className="ml-2 text-center ">{tpmInfo.status}</small>
             </p>
               </div>
-
-
-
             <p className="p-1 px-4 bg-gray-900 rounded-lg text-white shadow-lg opacity-30">
               Duration: <small className="ml-2 text-center ">{<ReactTimeago
                 className="text-lg text-white"
                 date={tpmInfo.createdAt}/>}</small>
             </p>
 
-           
-
+      
           </div>
         </div>
       </div>

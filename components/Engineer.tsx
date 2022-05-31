@@ -3,7 +3,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast'
 
-//import Data from "../Data"
+import Data from "../Data"
 import ReactTimeago from 'react-timeago';
 
 function Engineer() {
@@ -26,7 +26,7 @@ function Engineer() {
 
    const handleSearch = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
     e.preventDefault()
-    DataApi.filter((val: { tpm: string; })=>{
+    Data.filter((val: { tpm: string; })=>{
          if(!input){
          return val
          }else if (val.tpm?.toLowerCase().includes(input?.toLowerCase())){
@@ -51,9 +51,6 @@ function Engineer() {
 },[reflesh])
 
 
-
-
-
    const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
     axios
@@ -62,7 +59,7 @@ function Engineer() {
        
         { 
           status,
-          createdAt: new Date().toLocaleString()
+          createdAt: new Date().toLocaleString(),
         }
       )
       .then((response) => {
