@@ -25,7 +25,7 @@ function Receiption() {
 
    const handleSearch = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
     e.preventDefault()
-    Data.filter((val: { tpm: string; })=>{
+    DataApi.filter((val: { tpm: string; })=>{
          if(!input){
          return val
          }else if (val.tpm?.toLowerCase().includes(input?.toLowerCase())){

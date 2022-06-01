@@ -30,7 +30,7 @@ function Agent() {
 
    const handleSearch = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
     e.preventDefault()
-    Data.filter((val: val)=>{
+    DataApi.filter((val: val)=>{
          if(!input){
          return val
          }else if (val.tpm?.toLowerCase().includes(input?.toLowerCase())){
