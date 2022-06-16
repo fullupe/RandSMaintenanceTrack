@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 
 import React, { useState } from 'react'
@@ -21,6 +21,7 @@ const Home: NextPage = () => {
     })
   }
 
+  //console.log(data)
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-1 bg-gray-00 ">
       <Head>
@@ -77,3 +78,17 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+// export const getStaticProps:GetStaticProps = async ()=>{
+
+//   const res = await fetch('https://script.google.com/macros/s/AKfycbxe5kQvOnD_YypEX4_2g6YYkEfMejvE9WKx5PgMblHz/dev?action=900');
+
+//   const data = res.json(); 
+
+//   return{ 
+//     props:{ 
+//      data,
+//     }
+//   }
+
+// };

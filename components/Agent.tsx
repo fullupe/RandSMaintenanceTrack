@@ -4,7 +4,11 @@ import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast'
 
 import Data from "../Data"
-import ReactTimeago from 'react-timeago';
+//import ReactTimeago from 'react-timeago';
+import TimeAgo from "react-timeago"
+
+
+//const URL: string | undefined
 
 function Agent() {
 
@@ -18,13 +22,20 @@ function Agent() {
 
   const [reflesh, setReflesh] = useState<boolean>(false)
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+ 
 
-  
-  console.log(baseUrl)
+  const URL:string = process.env.NEXT_PUBLIC_BASE_URL as string
+
+
+
+  console.log(DataApi)
 
   interface val  { 
     tpm:string
+  }
+
+  interface Ulr { 
+    url:string | undefined
   }
   
 
@@ -33,7 +44,8 @@ function Agent() {
     DataApi.filter((val: val)=>{
          if(!input){
          return val
-         }else if (val.tpm?.toLowerCase().includes(input?.toLowerCase())){
+        //  }else if (val.tpm?.toLowerCase().includes(input?.toLowerCase())){
+         }else if (val.tpm?.toLowerCase() ==input?.toLowerCase()){
            //return val
            setTpmInfo(val);
            //setDataApi(val)
@@ -42,16 +54,28 @@ function Agent() {
           })
          }
        })
+       setReflesh(!reflesh)
    }
 
+  
+
+   function httpGet(URLe: string | URL) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", URLe, false ); // false for synchronous request
+    xmlHttp?.send( null );
+    const ApiData = JSON.parse(xmlHttp.responseText)
+    setDataApi(ApiData.data)
+   
+  }
+
+
     useEffect(() => {
-      axios.get(`${baseUrl}`).then((response)=>{
-      setDataApi(response.data)
-      console.log(response.data)
-      //setLoading(false)
-    }).catch((error)=>{
-      console.log(error)
-    })
+    
+    
+
+      httpGet(URL)
+   
+
   },[reflesh])
 
   return (
@@ -79,7 +103,7 @@ function Agent() {
             placeholder="Enter Tpm#"
             className=" p-1 w-44 flex-1 text-xl rounded-lg bg-gray-100 text-black outline-none placeholder:text-xl"
           />
-          {/* <button disabled={!input} className="text-white rounded-lg bg-blue-700 disabled:text-gray-800 cousor-pointer p-2 ">Search</button> */}
+         
           <button
           type="submit"
             onClick={handleSearch}
@@ -114,9 +138,10 @@ function Agent() {
             </p>
               </div>
             <p className="p-1 px-4 bg-gray-900 rounded-lg text-white shadow-lg opacity-30">
-              Duration: <small className="ml-2 text-center ">{<ReactTimeago
+              Duration: <small className="ml-2 text-center ">
+                <TimeAgo
                 className="text-lg text-white"
-                date={tpmInfo.createdAt}/>}</small>
+                date={tpmInfo.createdAt}/></small>
             </p>
 
       

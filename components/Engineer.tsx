@@ -2,12 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { BallTriangle,Circles } from  'react-loader-spinner'
 
 import Data from "../Data"
-import ReactTimeago from 'react-timeago';
+//import ReactTimeago from 'react-timeago';
+import TimeAgo from "react-timeago"
+
 
 function Engineer() {
+  
 
+ 
+  const URL:string = process.env.NEXT_PUBLIC_BASE_URL as string
+  const URLUpdate:string = process.env.NEXT_PUBLIC_BASE_URL_UPDATE as string
+  
     const [input, setInput] = useState<string>('')
 
     const [status, setStatus] = useState<string>('')
@@ -18,6 +27,8 @@ function Engineer() {
   const [DataApi, setDataApi] = useState<any>([])
 
   const [reflesh, setReflesh] = useState<boolean>(false)
+
+  const[Loading, SetLoading] = useState<boolean>(false)
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
@@ -39,41 +50,97 @@ function Engineer() {
        })
    }
 
+   function httpGet(URL: string | URL) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", URL, false ); // false for synchronous request
+    xmlHttp.send( null );
+    const ApiData = JSON.parse(xmlHttp.responseText)
+      setDataApi(ApiData.data)
+  }
 
    useEffect(() => {
-    axios.get(`${baseUrl}`).then((response)=>{
-    setDataApi(response.data)
-    console.log(response.data)
-    //setLoading(false)
-  }).catch((error)=>{
-    console.log(error)
-  })
+
+    httpGet(URL)
+
+
+
+  //   axios.get(`${baseUrl}`).then((response)=>{
+  //   setDataApi(response.data)
+  //   console.log(response.data)
+  //   //setLoading(false)
+  // }).catch((error)=>{
+  //   console.log(error)
+  // })
 },[reflesh])
 
 
    const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
-    axios
-      .patch(
-        `${baseUrl}/tpm/*${input}*`,
+
+    const request = {
+      tpm:tpmInfo.tpm,
+      agentName:tpmInfo.agentName,
+      status:status,
+      branch:tpmInfo.branch,
+      createdAt: new Date(),
+  }
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "POST", URLUpdate, true ); // false for synchronous request
+  //console.log('READYSTATE', xmlHttp.readyState);
+
+  if(xmlHttp.readyState==1){
+    SetLoading(true)
+  }else {
+    SetLoading(false)
+  }
+  
+  xmlHttp.send(JSON.stringify(request)) // Make sure to stringify
+
+  
+  
+
+  xmlHttp.onload = function() {
+              // Do whatever with response
+              //console.log(request)
+              //alert(xmlHttp.responseText)
+              SetLoading(false)
+              toast('Records Updated!',{
+                      icon:'🚀'
+                    })
+              console.log(xmlHttp.responseText)
+              setInput('')
+              setReflesh(!reflesh)
+
+           }
+           console.log('READYSTATE', xmlHttp.readyState);
+  xmlHttp.onerror = function(){ alert (xmlHttp.responseText);  console.log(request)}
+
+
+
+
+
+
+    // axios
+    //   .patch(
+    //     `${baseUrl}/tpm/*${input}*`,
        
-        { 
-          status,
-          createdAt: new Date().toLocaleString(),
-        }
-      )
-      .then((response) => {
-        //setReflesh(!reflesh)
-        console.log(response.data)
-        //setSimserialnumber('')
-        toast('Records Updated!',{
-          icon:'🚀'
-        })
+    //     { 
+    //       status,
+    //       createdAt: new Date().toLocaleString(),
+    //     }
+    //   )
+    //   .then((response) => {
+    //     //setReflesh(!reflesh)
+    //     console.log(response.data)
+    //     //setSimserialnumber('')
+    //     toast('Records Updated!',{
+    //       icon:'🚀'
+    //     })
        
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    //   })
+    //   .catch((error) => {
+    //     console.log(error)
+    //   })
 
   }
 
@@ -83,6 +150,8 @@ function Engineer() {
     >
       <Toaster />
       <div className="felx flex-col space-y-2">
+       
+        
         <div className=" h-96 bg-gray-00  items-center flex flex-col pt-8 ">
           <p className="text-gray-900 text-xl font-bold border-b mb-4">
             Engineer's Check{' '}
@@ -118,7 +187,7 @@ function Engineer() {
           <div className=" text-gray-900 items-center flex flex-col w-full ">
             <p className="border-b text-white">Terminal Details</p>
 
-            <div className="w-full flex flex-col mt-4 items-right space-y-4">
+            <div className="w-full flex flex-col mt-4 mb-1 items-right space-y-4">
 
             
             <p className="p-1 px-4 bg-gray-900 rounded-lg text-white shadow-lg opacity-30">
@@ -139,13 +208,22 @@ function Engineer() {
 
 
               <p className="p-1 px-4 bg-gray-900 rounded-lg text-white shadow-lg opacity-30">
-                Duration: <small className="ml-2 text-center ">{<ReactTimeago
+                Duration: <small className="ml-2 text-center ">
+                  
+                  <TimeAgo
                 className="text-lg text-white"
-                date={tpmInfo.createdAt}/>}</small>
+                date={tpmInfo.createdAt}/>
+
+             {/* <TimeAgo
+             className="text-sm text-gray-500"
+             date={tweet._createdAt}/>
+                 */}
+                </small>
               </p>
 
              
             </div>
+            {Loading &&<Circles color="#FC6238" height={50} width={80} />}
           </div>
         </div>
 
@@ -161,15 +239,17 @@ function Engineer() {
             value={status}
           >
               <optgroup label="Status">
+            <option value="Working On ✅">Choose Status</option>
             <option value="Ready ✅">Ready</option>
             <option value="Working On">Working On</option>
             <option value="On Test">On Test</option>
-            <option value="Eee Management">See Management</option>
+            <option value="See Management">See Management</option>
             <option value="Waiting for Part">Waiting for Part</option>
             <option value="Watter Entered">Water Entered</option>
             <option value="Card Damage by User">Card Damange by User</option>
             </optgroup>
           </select> 
+        
           <button type="submit" disabled={!input} onClick={handleSubmit}className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded disabled:text-gray-500">
             Submit
           </button>

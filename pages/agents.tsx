@@ -1,7 +1,11 @@
+
 import React from 'react'
 import Agent from '../components/Agent'
 
+
 function agents() {
+
+  
   return     (
     <div className="flex justify-center items-center h-screen flex-col" >
           <div className="
@@ -25,3 +29,23 @@ function agents() {
 }
 
 export default agents
+
+
+// const URL= process.env.NEXT_PUBLIC_BASE_URL;
+
+// export const GetStaticProps = async  ()=>{
+
+
+
+//   var xmlHttp = new XMLHttpRequest();
+//   xmlHttp.open( "GET", URL, false ); // false for synchronous request
+//   xmlHttp.send( null );
+//   return JSON.parse(xmlHttp.responseText);
+
+
+//   return{
+//     props: {
+//       Data,
+//     }
+//   }
+// }
