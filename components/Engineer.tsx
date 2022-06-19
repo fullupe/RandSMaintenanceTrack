@@ -6,7 +6,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { BallTriangle,Circles } from  'react-loader-spinner'
 
 import Data from "../Data"
-//import ReactTimeago from 'react-timeago';
+
 import TimeAgo from "react-timeago"
 
 
@@ -30,9 +30,8 @@ function Engineer() {
 
   const[Loading, SetLoading] = useState<boolean>(false)
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
-   //console.log(Data)
+
   
 
    const handleSearch = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
@@ -43,7 +42,7 @@ function Engineer() {
          }else if (val.tpm?.toLowerCase().includes(input?.toLowerCase())){
            //return val
            setTpmInfo(val);
-           toast('Record Fund!',{
+           toast('Record Found!',{
             icon:'🚀'
           })
          }
@@ -200,7 +199,7 @@ function Engineer() {
               </p>
 
               <p className="p-1 flex-1 px-4 bg-gray-900 rounded-lg text-white shadow-lg opacity-30">
-                {/* Status:  */}
+              
                 <small className="ml-2 text-center ">{tpmInfo.status}</small>
               </p>
                 </div>
@@ -214,10 +213,7 @@ function Engineer() {
                 className="text-lg text-white"
                 date={tpmInfo.createdAt}/>
 
-             {/* <TimeAgo
-             className="text-sm text-gray-500"
-             date={tweet._createdAt}/>
-                 */}
+           
                 </small>
               </p>
 
