@@ -87,21 +87,21 @@ const BranchTotalAlreadyOut =(branchArry: [])=>{
   return (
       <div className="h-screen w-full p-2 items-center flex justify-center">
     <div
-      className={`py-3 pb-4  items-center px-3 bg-whitee bg-gradient-to-r from-sky-500 to-indigo-500 shadow-2xl h-4/5 md:max-w-md !important text-lg rounded-2xl relative  flex flex-col  w-full  text-white mt-8  overflow-hidden`}
+      className={`py-3 pb-4  items-center px-3 bg-whitee bg-gradient-to-r from-sky-500 to-indigo-500 shadow-2xl h-screen md:max-w-md !important text-lg rounded-2xl relative  flex flex-col  w-full  text-white mt-8  overflow-hidden`}
     >
        <div className=" bg-white flex flex-col w-full h-2/4 mb-2 shadow-xl items-center justify-center space-x-2 rounded-2xl">
-                    <p className="text-gray-500 text-xs py-4 italic animate-bounce ">Other Means: Tpm Under Maintenance or Ready for picUp..</p>
+                    <p className="text-gray-500 text-xs py-4  mb-2 italic animate-bounce ">Other Means: Tpm Under Maintenance or Ready for picUp..</p>
         <div className="bg-whites flex w-full h-2/4 mb-2 shadow-xls items-center justify-center space-x-2 rounded-2xl">
                    
             <div className=" shadow-xl border-2 items-center  border-red-300  flex flex-col px-6">
-            <div className="bg-gradient-to-r from-sky-500 to-indigo-500 p-12 rounded-full w-12 items-center justify-center h-12 flex  m-4"> 
+            <div className="bg-gradient-to-r from-sky-500 to-indigo-500 p-12 rounded-full w-12 items-center justify-center h-12 flex  m-1"> 
             <p>{OtherPercentage}%</p>
             </div>
             <p className="text-gray-500 text-sm pb-2">Other</p>
             </div>
 
             <div className="shadow-xl border-2 items-center border-red-300 flex flex-col px-6">
-            <div className="bg-gradient-to-r from-sky-500 to-indigo-500 p-12 rounded-full w-12 items-center justify-center  h-12 flex m-4">
+            <div className="bg-gradient-to-r from-sky-500 to-indigo-500 p-12 rounded-full w-12 items-center justify-center  h-12 flex m-1">
                 <p>{ActivePercentage}%</p>
             </div>
             <p className="text-gray-400 text-sm pb-2">Active Machine</p>
@@ -113,7 +113,7 @@ const BranchTotalAlreadyOut =(branchArry: [])=>{
         <div className="bg-white  flex  w-full h-3/4 shadow-xl rounded-2xl items-center flex-col pt-1">
            
 
-        <Swiper className="flex  flex-col h-full w-96 md:w-2/2 gap-5 mt-4 "
+        <Swiper className="flex  flex-col h-full w-80 md:w-2/2 gap-5 mt-4 "
          // install Swiper modules
          modules={[Pagination]}
          spaceBetween={40}
