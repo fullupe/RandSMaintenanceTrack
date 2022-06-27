@@ -112,35 +112,7 @@ function Engineer() {
 
            }
            console.log('READYSTATE', xmlHttp.readyState);
-  xmlHttp.onerror = function(){ alert (xmlHttp.responseText);  console.log(request)}
-
-
-
-
-
-
-    // axios
-    //   .patch(
-    //     `${baseUrl}/tpm/*${input}*`,
-       
-    //     { 
-    //       status,
-    //       createdAt: new Date().toLocaleString(),
-    //     }
-    //   )
-    //   .then((response) => {
-    //     //setReflesh(!reflesh)
-    //     console.log(response.data)
-    //     //setSimserialnumber('')
-    //     toast('Records Updated!',{
-    //       icon:'🚀'
-    //     })
-       
-    //   })
-    //   .catch((error) => {
-    //     console.log(error)
-    //   })
-
+       xmlHttp.onerror = function(){ alert (xmlHttp.responseText);  console.log(request)}
   }
 
   return (
@@ -153,7 +125,7 @@ function Engineer() {
         
         <div className=" h-96 bg-gray-00  items-center flex flex-col pt-8 ">
           <p className="text-gray-900 text-xl font-bold border-b mb-4">
-            Engineer's Check{' '}
+            Engineer's Check
           </p>
 
           <form className="flex items-center mt-3 space-x-3 mb-4">

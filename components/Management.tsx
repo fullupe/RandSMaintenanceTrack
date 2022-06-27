@@ -136,9 +136,6 @@ const BranchTotalAlreadyOut =(branchArry: [])=>{
             <p className="text-gray-900 italic justify-self-center">{review[0]}</p>
 
            
-             
-                
-               
                     <div className="flex shadow-xl bg-gradient-to-r from-sky-500 to-indigo-500 opacity-100 p-1 rounded-md   w-full justify-between"> 
                   
                     <div className="space-x-10">

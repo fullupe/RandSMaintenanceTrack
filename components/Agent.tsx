@@ -49,7 +49,7 @@ function Agent() {
            //return val
            setTpmInfo(val);
            //setDataApi(val)
-           toast('Record Fund!',{
+           toast('Record Found!',{
             icon:'🚀'
           })
          }
@@ -157,7 +157,7 @@ function Agent() {
 
         
           <div className=" flex flex-col pb-4 w-full justify-center  items-center bg-red-00">
-              <p className="animate-bounce capitalize ">Safty-Tips</p>
+              <p className="animate-bounce capitalize ">Safety-Tips</p>
               <p className="text-sm text-gray-300 italic">  *️⃣ Do Not hold paper whiles Printing ✊ </p>
               <p className="text-sm text-gray-300 italic">  *️⃣ Do Not leave tpm under Rain  🌧 </p>
           </div>

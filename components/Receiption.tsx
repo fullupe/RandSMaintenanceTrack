@@ -37,7 +37,7 @@ function Receiption() {
       } else if (val.tpm?.toLowerCase().includes(input?.toLowerCase())) {
         //return val
         setTpmInfo(val)
-        toast('Record Fund!', {
+        toast('Record Found!', {
           icon: '🚀',
         })
         setReflesh(!reflesh)
@@ -241,7 +241,7 @@ function Receiption() {
           <div className=" text-gray-900 items-center flex flex-col w-full">
             <p className="border-b text-white italic">Terminal Details</p>
 
-            <div className="w-full flex flex-col mt-2 mb-1 items-right space-y-4">
+            <div className="w-full flex flex-col mt-2 mb-1 items-right space-y-4 pb-1">
               <p className="p-1 px-4 bg-gray-900 rounded-lg text-white shadow-lg opacity-30">
                 Retailer Name:{' '}
                 <small className="ml-2 text-center uppercase ">
@@ -272,7 +272,7 @@ function Receiption() {
                 </small>
               </p>
             </div>
-            {Loading &&<Circles color="#FC6238" height={50} width={80} />}
+            {Loading &&<Circles color="#FC6238" height={40} width={70} />}
           </div>
         </div>
 

@@ -9,6 +9,7 @@ import toast from 'react-hot-toast'
 import {  RiLockPasswordLine } from 'react-icons/ri'
 
 import Receiption from '../components/Receiption'
+import Agent from '../components/Agent';
 
 const Home: NextPage = () => {
 
@@ -36,25 +37,9 @@ const Home: NextPage = () => {
 
  
    </div>
+   <Agent/>
 
-   { password == passwordone ? (
-               <Receiption />
-          ):(
-            <div className="  z-10 absolute flex flex-col h-96 px-12 bg-white justify-center items-center shadow-xl rounded-lg ">
-                      
-                        <RiLockPasswordLine className="h-10 w-10 p-1 text-blue-900"/>
-            <div className="flex bg-blue-00 mt-2 space-x-4 border p-2 rounded-lg outline-none">
-            {/* <p>password</p> */}
-            <input placeholder="PinCode" className="outline-none  " value={password} onChange={(e)=>setPassword(e.target.value)} type="password"/>
-          </div>
-          <button onClick={wrongPass} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-4">
-  LogIn
-</button>
-
-          </div>
-          )
-            
-          }
+ 
 
   <div className="h-full w-full flex-1 bg-blue-500  ">
 
@@ -73,22 +58,10 @@ const Home: NextPage = () => {
     </div>
 
       
-    // </div>
+  
   )
 }
 
 export default Home
 
-// export const getStaticProps:GetStaticProps = async ()=>{
 
-//   const res = await fetch('https://script.google.com/macros/s/AKfycbxe5kQvOnD_YypEX4_2g6YYkEfMejvE9WKx5PgMblHz/dev?action=900');
-
-//   const data = res.json(); 
-
-//   return{ 
-//     props:{ 
-//      data,
-//     }
-//   }
-
-// };
