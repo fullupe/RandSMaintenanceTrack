@@ -124,7 +124,7 @@ function Engineer() {
        
         
         <div className=" h-96 bg-gray-00  items-center flex flex-col pt-8 ">
-          <p className="text-gray-900 text-xl font-bold border-b mb-4">
+          <p className="text-gray-900 text-2xl font-bold font-poppins border-b mb-4">
             Engineer's Check
           </p>
 
@@ -138,7 +138,7 @@ function Engineer() {
               maxLength={4}
               type="number"
               autoFocus={true}
-              placeholder="Enter Tpm Number"
+              placeholder="Enter Tpm Num."
               className=" p-1 w-44 flex-1 text-xl rounded-lg bg-gray-100 text-black outline-none placeholder:text-xl"
             />
             
@@ -156,7 +156,7 @@ function Engineer() {
           </form>
 
           <div className=" text-gray-900 items-center flex flex-col w-full ">
-            <p className="border-b text-white">Terminal Details</p>
+            <p className="border-b text-2xl text-white font-poppins ">Terminal Details</p>
 
             <div className="w-full flex flex-col mt-4 mb-1 items-right space-y-4">
 
@@ -199,14 +199,14 @@ function Engineer() {
 
         <form className=" flex flex-col h-full w-full bg-yellow-00 p-4 space-y-3">
          
-          <label>Change Status</label>
+          <label className=" font-cinzel ">Change Status</label>
 
           <select
-            className=" p-2 flex w-full text-xl rounded-lg bg-gray-100 text-black outline-none placeholder:text-xl"
+            className=" p-2 flex w-full text-xl rounded-lg bg-gray-100 text-black outline-none placeholder:text-xl font-cinzel"
             onChange={(e) => setStatus(e.target.value)}
             value={status}
           >
-              <optgroup label="Status">
+              <optgroup className="font-poppins" label="Status">
             <option value="Working On ✅">Choose Status</option>
             <option value="Ready ✅">Ready</option>
             <option value="Working On">Working On</option>

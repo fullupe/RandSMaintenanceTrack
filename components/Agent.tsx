@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai'
-import axios from 'axios';
+
 import toast, { Toaster } from 'react-hot-toast'
+import Typewriter from 'typewriter-effect'
 
 import Data from "../Data"
 //import ReactTimeago from 'react-timeago';
@@ -85,7 +86,7 @@ function Agent() {
     <Toaster />
     <div className="felx flex-col space-y-2">
       <div className=" h- bg-gray-00  items-center flex flex-col mt-6 ">
-        <p className="text-gray-900 text-xl font-bold border-b mb-6 italic ">
+        <p className="text-gray-900 text-2xl font-bold border-b mb-6 font-poppins italic ">
       
           Maintenance Check 📮 {' '}
         </p>
@@ -118,7 +119,7 @@ function Agent() {
         </form>
 
         <div className=" text-gray-900 items-center flex flex-col w-full">
-          <p className="border-b text-white italic">Terminal Details</p>
+          <p className="border-b text-white text-2xl italic font-poppins ">Terminal Details</p>
 
           <div className="w-full flex flex-col mt-2 items-right space-y-4">
 
@@ -157,9 +158,31 @@ function Agent() {
 
         
           <div className=" flex flex-col pb-4 w-full justify-center  items-center bg-red-00">
-              <p className="animate-bounce capitalize ">Safety-Tips</p>
-              <p className="text-sm text-gray-300 italic">  *️⃣ Do Not hold paper whiles Printing ✊ </p>
-              <p className="text-sm text-gray-300 italic">  *️⃣ Do Not leave tpm under Rain  🌧 </p>
+              <p className="animate-bounce capitalize font-cinzel ">Safety-Tips</p>
+
+
+        <p className="text-sm text-gray-300 font-tapestry italic">  *️⃣ Do Not hold paper whiles Printing ✊ </p>
+              <Typewriter 
+        options={{
+          autoStart:true,
+          loop: true,
+          
+        }}
+          onInit={(typewriter) => {
+            typewriter
+             
+              .typeString(' Do Not leave tpm under Rain  🌧  ')
+              .pauseFor(2000)
+              .start()
+              .deleteAll()
+              
+          }}
+        />
+
+              {/* <p className="text-sm text-gray-300 italic">  *️⃣ Do Not hold paper whiles Printing ✊ </p> */}
+              {/* <p className="text-sm text-gray-300 italic">  *️⃣ Do Not leave tpm under Rain  🌧 </p> */}
+
+
           </div>
 
       </div>

@@ -90,21 +90,21 @@ const BranchTotalAlreadyOut =(branchArry: [])=>{
       className={`py-3 pb-4  items-center px-3 bg-whitee bg-gradient-to-r from-sky-500 to-indigo-500 shadow-2xl h-screen md:max-w-md !important text-lg rounded-2xl relative  flex flex-col  w-full  text-white mt-8  overflow-hidden`}
     >
        <div className=" bg-white flex flex-col w-full h-2/4 mb-2 shadow-xl items-center justify-center space-x-2 rounded-2xl">
-                    <p className="text-gray-500 text-xs py-4  mb-2 italic animate-bounce ">Other Means: Tpm Under Maintenance or Ready for picUp..</p>
+                    <p className="text-gray-500 text-sm py-4  mb-2  animate-bounce font-cinzel ">Other Means: Tpm Under Maintenance or Ready for picUp..</p>
         <div className="bg-whites flex w-full h-2/4 mb-2 shadow-xls items-center justify-center space-x-2 rounded-2xl">
                    
             <div className=" shadow-xl border-2 items-center  border-red-300  flex flex-col px-6">
             <div className="bg-gradient-to-r from-sky-500 to-indigo-500 p-12 rounded-full w-12 items-center justify-center h-12 flex  m-1"> 
-            <p>{OtherPercentage}%</p>
+            <p className="font-cinzel text-2xl">{OtherPercentage}%</p>
             </div>
-            <p className="text-gray-500 text-sm pb-2">Other</p>
+            <p className="text-gray-500 text-sm pb-2 font-cinzel ">Other</p>
             </div>
 
             <div className="shadow-xl border-2 items-center border-red-300 flex flex-col px-6">
             <div className="bg-gradient-to-r from-sky-500 to-indigo-500 p-12 rounded-full w-12 items-center justify-center  h-12 flex m-1">
-                <p>{ActivePercentage}%</p>
+                <p className="text-2xl font-cinzel">{ActivePercentage}%</p>
             </div>
-            <p className="text-gray-400 text-sm pb-2">Active Machine</p>
+            <p className="text-gray-400 text-sm pb-2 font-cinzel">Active Machine</p>
             </div>
         </div>
 
@@ -133,7 +133,7 @@ const BranchTotalAlreadyOut =(branchArry: [])=>{
        
             <div className="flex   space-y-2 flex-col items-start w-full">
 
-            <p className="text-gray-900 italic justify-self-center">{review[0]}</p>
+            <p className="text-red-500 italic justify-self-center font-tapestry">{review[0]}</p>
 
            
                     <div className="flex shadow-xl bg-gradient-to-r from-sky-500 to-indigo-500 opacity-100 p-1 rounded-md   w-full justify-between"> 
@@ -149,17 +149,17 @@ const BranchTotalAlreadyOut =(branchArry: [])=>{
 
                         <div className=" shadow-xl border-2 items-center flex flex-col px-6">
                         <div className="bg-gradient-to-r from-sky-500 to-indigo-500 p-10 rounded-full border-2 border-red-300  w-12 items-center justify-center h-12 flex  m-4"> 
-                        <p>{Math.round(((review[1].length-BranchTotalAlreadyOut(review[1]))/review[1].length)*100)}%</p>
+                        <p className="font-cinzel text-2xl">{Math.round(((review[1].length-BranchTotalAlreadyOut(review[1]))/review[1].length)*100)}%</p>
                         </div>
-                        <p className="text-gray-500 text-sm pb-2">Other</p>
+                        <p className="text-gray-500 text-sm pb-2 font-cinzel ">Other</p>
                         </div>
 
 
                         <div className=" shadow-xl border-2 items-center flex flex-col px-6 bore">
                         <div className="bg-gradient-to-r from-sky-500 to-indigo-500 p-10 rounded-full border-2 border-red-300 w-10 items-center justify-center h-12 flex  m-4"> 
-                        <p>{Math.round((BranchTotalAlreadyOut(review[1])/review[1].length)*100)}%</p>
+                        <p className="font-cinzel text-2xl">{Math.round((BranchTotalAlreadyOut(review[1])/review[1].length)*100)}%</p>
                         </div>
-                        <p className="text-gray-500 text-sm pb-2">Active Machines</p>
+                        <p className="text-gray-500 text-sm pb-2 font-cinzel">Active Machines</p>
                         </div>
                         
 

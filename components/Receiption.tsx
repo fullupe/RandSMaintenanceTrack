@@ -158,7 +158,7 @@ function Receiption() {
       <Toaster />
       <div className="felx flex-col space-y-6">
         <div className=" h- bg-gray-00  items-center flex flex-col mt-8 ">
-          <p className="text-gray-900 text-xl font-bold border-b mb-8 italic ">
+          <p className="text-gray-900 text-2xl font-bold border-b mb-8 italic font-poppins ">
             Receiption Check 📮{' '}
           </p>
 
@@ -186,7 +186,7 @@ function Receiption() {
           </form>
 
           <div className=" text-gray-900 items-center flex flex-col w-full">
-            <p className="border-b text-white italic">Terminal Details</p>
+            <p className="border-b text-white text-2xl italic font-poppins ">Terminal Details</p>
 
             <div className="w-full flex flex-col mt-2 mb-1 items-right space-y-4 pb-1">
               <p className="p-1 px-4 bg-gray-900 rounded-lg text-white shadow-lg opacity-30">

@@ -4,11 +4,9 @@ import Engineer from '../components/Engineer'
 import Management from '../components/Management'
 import Receiption from '../components/Receiption'
 import { AiOutlineMenu } from 'react-icons/ai';
+import { SiVivaldi } from 'react-icons/si';
 import  { Toaster } from 'react-hot-toast';
 import toast from 'react-hot-toast'
-
-
-
 
 
 
@@ -69,11 +67,11 @@ const wrongPass = (e: React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
 
   return (
       
-    <div className="flex min-h-screen flex-col items-center justify-center py-1">
+    <div className="flex min-h-screen flex-col items-center justify-center ">
         <Toaster/>
 
-        <div onClick={refreshPage} className="h-12  w-12 bg-red-500 rounded-full cursor-pointer flex p-4 mt-2 items-center justify-center">
-        <AiOutlineMenu className="text-white font-bold text-2xl"/>
+        <div onClick={refreshPage} className="h-12  w-12 bg-red-500 rounded-full cursor-pointer flex p-2 mt-2 items-center justify-center">
+        <AiOutlineMenu className="text-white font-boldx text-2xl"/>
         
          
          </div>
@@ -106,12 +104,13 @@ const wrongPass = (e: React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
                     <input value={receptionCode} onChange={(e)=>setReceptionCode(e.target.value)} type="password" placeholder="PinCode" className=" outline-none flex-1 w-[50%] mx-4 text-black"/>
             ):(
 
-                <div className=" h-14 w-14 bg-white flex-1 text-black items-center justify-center flex ">Reception</div>
+                <div className=" h-14 w-14 bg-white flex-1 font-poppins text-black items-center justify-center flex ">Reception</div>
             )
             }
 
               <div onClick={wrongPass} className=" h-16 w-16 rounded-full bg-red-500 items-center cursor-pointer  flex justify-center">
-                 <p> Goal</p>
+                 {/* <p> Enter</p> */}
+                 <SiVivaldi className="text-2xl"/>
              </div>
           </div>
 
@@ -125,12 +124,14 @@ const wrongPass = (e: React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
                     <input value={engineerCode} onChange={(e)=>setEngineerCode(e.target.value)} type="password" placeholder="PinCode" className=" outline-none flex-1 w-[50%] mx-4 text-black"/>
             ):(
 
-              <div className=" h-14 w-14 bg-white flex-1 text-black items-center justify-center flex ">Engineer's</div>
+              <div className=" h-14 w-14 bg-white flex-1 font-poppins text-black items-center justify-center flex ">Engineer's</div>
               )
             }
 
               <div onClick={wrongPass} className=" h-16 w-16 rounded-full bg-red-500 items-center cursor-pointer flex justify-center">
-                 <p> Goal</p>
+                 {/* <p> Goal</p> */}
+                 <SiVivaldi className="text-2xl"/>
+
              </div>
           </div>
 
@@ -144,12 +145,13 @@ const wrongPass = (e: React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
                     <input value={managementCode} onChange={(e)=>setManagementCode(e.target.value)} type="password" placeholder="PinCode" className=" outline-none flex-1 w-[50%] mx-4 text-black"/>
             ):(
 
-              <div className=" h-14 w-14 bg-white flex-1 text-black items-center justify-center flex ">Management</div>
+              <div className=" h-14 w-14 bg-white flex-1 font-poppins text-black items-center justify-center flex ">Management</div>
 
               )
             }
               <div onClick={wrongPass} className=" h-16 w-16 rounded-full bg-red-500 items-center cursor-pointer flex justify-center">
-                 <p> Goal</p>
+                 {/* <p> Goal</p> */}
+                 <SiVivaldi className="text-2xl"/>
              </div>
           </div>
 
