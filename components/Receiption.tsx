@@ -45,15 +45,7 @@ function Receiption() {
     })
   }
 
-  //    useEffect(() => {
-  //     axios.get(`${baseUrl}`).then((response)=>{
-  //     setDataApi(response.data)
-  //     console.log(response.data)
-  //     //setLoading(false)
-  //   }).catch((error)=>{
-  //     console.log(error)
-  //   })
-  // },[reflesh])
+
 
   function httpGet(URL: string | URL) {
     var xmlHttp = new XMLHttpRequest()
@@ -113,33 +105,7 @@ function Receiption() {
       console.log(request)
     }
 
-    //const ApiData = JSON.parse(xmlHttp.responseText)
-    //setDataApi(ApiData.data)
-
-    // axios
-    //   .post(
-    //     // `${baseUrl}/tpm/*${input}*`,
-    //     `${URLUpdate}`,
-
-    //     {
-    //       tpm:tpmInfo.tpm,
-    //      agentName:tpmInfo.agentName,
-    //      status:'Working On',
-    //      branch:tpmInfo.branch
-    //     }
-    //   )
-    //   .then((response) => {
-    //     //setReflesh(!reflesh)
-    //     console.log(response.data)
-    //     //setSimserialnumber('')
-    //     toast('Records Updated!',{
-    //       icon:'🚀'
-    //     })
-
-    //   })
-    //   .catch((error) => {
-    //     console.log(error)
-    //   })
+    
   }
 
   const handleSubmitOut = (
@@ -181,33 +147,14 @@ function Receiption() {
       console.log(request)
     }
 
-    // axios
-    //   .patch(
-    //     `${baseUrl}/tpm/*${input}*`,
-
-    //     {
-    //       status:"Already Out",
-    //       createdAt: new Date().toLocaleString()
-    //     }
-    //   )
-    //   .then((response) => {
-    //     //setReflesh(!reflesh)
-    //     console.log(response.data)
-    //     //setSimserialnumber('')
-    //     toast('Records Updated!',{
-    //       icon:'🚀'
-    //     })
-
-    //   })
-    //   .catch((error) => {
-    //     console.log(error)
-    //   })
   }
 
   return (
     <div
-      className={`py-4 px-6 bg-whitee bg-gradient-to-r from-sky-500 to-indigo-500 shadow-2xl h-4/5 md:max-w-md !important text-lg rounded-2xl relativee absolute  flex flex-col h leading- w-4/5 text-white mt-8 mb-12 overflow-hidden `}
+      className='py-4 px-6 bg-whitee bg-gradient-to-r from-sky-500 to-indigo-500 shadow-2xl h-4/5 md:max-w-md !important text-lg rounded-2xl relativee absolutev  flex flex-col h leading- w-4/5 text-white mt-8 mb-12 overflow-hidden'
     >
+
+      
       <Toaster />
       <div className="felx flex-col space-y-6">
         <div className=" h- bg-gray-00  items-center flex flex-col mt-8 ">

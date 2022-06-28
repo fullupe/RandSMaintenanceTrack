@@ -4,12 +4,16 @@ import Engineer from '../components/Engineer'
 import Management from '../components/Management'
 import Receiption from '../components/Receiption'
 import { AiOutlineMenu } from 'react-icons/ai';
+import  { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast'
+
 
 
 
 
 
 function menu() {
+   
 
  const [reception, setReception]= useState(false)
  const [engineers, setEngineers]= useState(false)
@@ -27,24 +31,60 @@ const showR = passwordR == receptionCode
 const showE = passwordE == engineerCode
 const showM = passwordM == managementCode
 
+const wrongPass = (e: React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
+    toast('Wrong PinCode!',{
+      icon:'👿'
+    })
+  }
+
+  const refreshPage=()=>{
+    setReceptionCode('')
+    setEngineerCode('')
+    setManagementCode('')
+
+    setReception(false)
+    setEngineers(false)
+    setManagement(false)
+  }
+
+  const openAndCloseReceptionInput =()=>{
+    setReception(!reception)
+    setEngineers(false)
+    setManagement(false)
+      
+  }
+  const openAndCloseEngineerInput =()=>{
+    setReception(false)
+    setEngineers(!engineers)
+    setManagement(false)
+
+  }
+  const openAndCloseManagementInput =()=>{
+    setReception(false)
+    setEngineers(false)
+    setManagement(!management)
+
+  }
+
 
   return (
+      
     <div className="flex min-h-screen flex-col items-center justify-center py-1">
+        <Toaster/>
 
-     <div className="h-12 w-12 bg-red-500 rounded-full flex p-4 mt-2 items-center justify-center">
+        <div onClick={refreshPage} className="h-12  w-12 bg-red-500 rounded-full cursor-pointer flex p-4 mt-2 items-center justify-center">
         <AiOutlineMenu className="text-white font-bold text-2xl"/>
+        
          
          </div>
-
-
-        {
-        showE &&
-        <Engineer/>
-        }
 
         {
         showR &&
        <Receiption />  
+        }
+         {
+        showE &&
+        <Engineer/>
         }
 
         {
@@ -60,7 +100,7 @@ const showM = passwordM == managementCode
       <div className=" bg-red-00 justify-center items-center flex flex-col h-96 w-full">
         
           <div className=" bg-white w-full p-2 flex m-2 rounded-3xl items-center">
-             <MdKeyboardArrowLeft onClick={()=>setReception(!reception)} className="h-10 w-10 p-1 text-white bg-red-500 rounded-full"/>
+             <MdKeyboardArrowLeft onClick={openAndCloseReceptionInput} className="h-10 w-10 p-1 cursor-pointer text-white bg-red-500 rounded-full"/>
             { 
             reception ? (
                     <input value={receptionCode} onChange={(e)=>setReceptionCode(e.target.value)} type="password" placeholder="PinCode" className=" outline-none flex-1 w-[50%] mx-4 text-black"/>
@@ -70,7 +110,7 @@ const showM = passwordM == managementCode
             )
             }
 
-              <div className=" h-16 w-16 rounded-full bg-red-500 items-center  flex justify-center">
+              <div onClick={wrongPass} className=" h-16 w-16 rounded-full bg-red-500 items-center cursor-pointer  flex justify-center">
                  <p> Goal</p>
              </div>
           </div>
@@ -78,7 +118,7 @@ const showM = passwordM == managementCode
 
 
           <div className=" bg-white w-full p-2 flex m-2 rounded-3xl items-center">
-             <MdKeyboardArrowLeft onClick={()=>setEngineers(!engineers)} className="h-10 w-10 p-1 text-white bg-red-500 rounded-full"/>
+             <MdKeyboardArrowLeft onClick={openAndCloseEngineerInput} className="h-10 w-10 p-1 cursor-pointer text-white bg-red-500 rounded-full"/>
 
              { 
             engineers ? (
@@ -89,7 +129,7 @@ const showM = passwordM == managementCode
               )
             }
 
-              <div className=" h-16 w-16 rounded-full bg-red-500 items-center  flex justify-center">
+              <div onClick={wrongPass} className=" h-16 w-16 rounded-full bg-red-500 items-center cursor-pointer flex justify-center">
                  <p> Goal</p>
              </div>
           </div>
@@ -97,7 +137,7 @@ const showM = passwordM == managementCode
 
 
           <div className=" bg-white w-full p-2 flex m-2 rounded-3xl items-center">
-             <MdKeyboardArrowLeft onClick={()=>setManagement(!management)} className="h-10 w-10 p-1 text-white bg-red-500 rounded-full"/>
+             <MdKeyboardArrowLeft onClick={openAndCloseManagementInput} className="h-10 w-10 p-1 cursor-pointer text-white bg-red-500 rounded-full"/>
 
              { 
             management ? (
@@ -108,7 +148,7 @@ const showM = passwordM == managementCode
 
               )
             }
-              <div className=" h-16 w-16 rounded-full bg-red-500 items-center  flex justify-center">
+              <div onClick={wrongPass} className=" h-16 w-16 rounded-full bg-red-500 items-center cursor-pointer flex justify-center">
                  <p> Goal</p>
              </div>
           </div>
