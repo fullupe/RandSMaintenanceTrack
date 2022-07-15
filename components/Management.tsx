@@ -97,7 +97,7 @@ const BranchTotalAlreadyOut =(branchArry: [])=>{
             <div className="bg-[#AAF7D3] border-2  -gradient-to-r from-sky-500 to-indigo-500 p-12 rounded-full w-12 items-center justify-center h-12 flex  m-1"> 
             <p className="font-cinzel text-orange-500  text-2xl">{OtherPercentage}%</p>
             </div>
-            <p className="text-gray-500 text-sm pb-2 font-cinzel ">Other</p>
+            <p className="text-gray-500 text-sm pb-2 font-cinzel ">Other/Repairs</p>
             </div>
 
             <div className="shadow-xl border-2 items-center border-red-300 flex flex-col px-6">
@@ -210,28 +210,29 @@ const BranchTotalAlreadyOut =(branchArry: [])=>{
 
                     <div className="w-full bg-yellow-00 h-full">
 
-                        <div className=" shadow-xl border-2 items-center flex flex-col px-6">
+                        <div className=" shadow-xl border-2 items-center flex flex-cold px-6">
 
 
                        
-
+                        <div className="flex flex-col">
                         <div className="bg bg-[#AAF7D3] -gradient-to-r from-sky-500 to-indigo-500 p-10 rounded-full border-2 border-red-300  w-12 items-center justify-center h-12 flex  m-4"> 
                         <p className="font-cinzel text-orange-500 text-2xl">{Math.round(((review[1].length-BranchTotalAlreadyOut(review[1]))/review[1].length)*100)}%</p>
                         </div>
-
-                     
-
-                        <p className="text-gray-500 text-sm pb-2 font-cinzel ">Other</p>
-
+                        <p className="text-gray-500 text-sm pb-2 font-cinzel ">Other/Repairs</p>
                         </div>
 
-
-                        <div className=" shadow-xl border-2 items-center flex flex-col px-6 ">
+                       <div className="flex flex-col">
                         <div className="bg-[#AAF7D3] -to-r from-sky-500 to-indigo-500 p-10 rounded-full border-2 border-red-300 w-10 items-center justify-center h-12 flex  m-4"> 
                         <p className="font-cinzel text-orange-500 text-2xl">{Math.round((BranchTotalAlreadyOut(review[1])/review[1].length)*100)}%</p>
                         </div>
                         <p className="text-gray-500 text-sm pb-2 font-cinzel">Active Machines</p>
+                       </div>
+
+
                         </div>
+
+
+                        
                         
 
                     </div>
