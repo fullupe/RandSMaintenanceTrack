@@ -8,6 +8,9 @@ import { SiVivaldi } from 'react-icons/si';
 import  { Toaster } from 'react-hot-toast';
 import toast from 'react-hot-toast'
 
+var CryptoJS = require("crypto-js");
+
+
 
 
 function menu() {
@@ -21,13 +24,30 @@ function menu() {
  const [engineerCode,setEngineerCode]=useState('')
  const [managementCode,setManagementCode]=useState('')
 
- const passwordR = "5050"
- const passwordE = "6060"
- const passwordM = "7070"
+ // Encrypt (not in use in this app)
+var ciphertext = CryptoJS.AES.encrypt('5050', 'secrete5050').toString();
 
-const showR = passwordR == receptionCode
-const showE = passwordE == engineerCode
-const showM = passwordM == managementCode
+// Decrypt (not in use in this app)
+var bytes  = CryptoJS.AES.decrypt(ciphertext, 'secrete5050');
+var originalText = bytes.toString(CryptoJS.enc.Utf8);
+
+console.log("enc",ciphertext);
+
+console.log("Denc",bytes);
+
+console.log("PlainText-Denc",originalText);
+
+
+
+
+ //const passwordR = "U2FsdGVkX19LI2oaIu1S6N+AgWzBkgRnwmpCeNPY93I="
+ const passwordR = process.env.NEXT_PUBLIC_PASSWORD_R
+ const passwordE = process.env.NEXT_PUBLIC_PASSWORD_E
+ const passwordM =process.env.NEXT_PUBLIC_PASSWORD_M
+
+ const showR = passwordR == receptionCode
+ const showE = passwordE == engineerCode
+ const showM = passwordM == managementCode
 
 const wrongPass = (e: React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
     toast('Wrong PinCode!',{
