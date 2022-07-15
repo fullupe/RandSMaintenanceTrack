@@ -213,7 +213,7 @@ function Engineer() {
             <option value="On Test">On Test</option>
             <option value="See Management">See Management</option>
             <option value="Waiting for Part">Waiting for Part</option>
-            <option value="Watter Entered">Water Entered</option>
+            <option value="Water Entered">Water Entered</option>
             <option value="Card Damage by User">Card Damange by User</option>
             </optgroup>
           </select> 
