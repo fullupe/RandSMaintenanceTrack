@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Adsense from "../components/Adsense"
 
 import React, { useState } from 'react'
 
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
        <Toaster/>
+       <Adsense/>
    
 
     <div className="
